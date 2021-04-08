@@ -1,2 +1,3 @@
 # otf-util
-shared lib from each internal util in otf-reader, otf-align, otf-level
+
+Shared libs from each internal util of otf-reader, otf-align, otf-level
