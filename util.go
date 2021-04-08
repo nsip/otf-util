@@ -4,7 +4,6 @@ import (
 	"crypto/rand"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"math/big"
 	"net"
@@ -48,6 +47,7 @@ func newNetClient() *http.Client {
 
 //
 // generate a short useful unique name - hashid in this case
+// defaultName can be upper project name like "aligner", "reader", "leveller"
 //
 func GenerateName(defaultName string) string {
 
@@ -205,7 +205,7 @@ func Fetch(method string, url string, header map[string]string, body io.Reader) 
 	}
 
 	// return response payload as bytes
-	respByte, err := ioutil.ReadAll(res.Body)
+	respByte, err := io.ReadAll(res.Body)
 	if err != nil {
 		return nil, errors.Wrap(err, "cannot read Fetch response")
 	}
