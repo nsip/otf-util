@@ -101,6 +101,12 @@ func TimeTrack(start time.Time, name string) {
 func AvailablePort() (int, error) {
 
 	listener, err := net.Listen("tcp", ":0")
+	defer func() {
+		if listener != nil {
+			listener.Close()
+		}
+	}()
+
 	if err != nil {
 		return 0, errors.Wrap(err, "cannot acquire a tcp port")
 	}
