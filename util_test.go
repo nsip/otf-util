@@ -6,8 +6,6 @@ import (
 	"reflect"
 	"testing"
 	"time"
-
-	"github.com/nats-io/stan.go"
 )
 
 func Test_newNetClient(t *testing.T) {
@@ -99,8 +97,8 @@ func TestAvailablePort(t *testing.T) {
 	}{
 		// TODO: Add test cases.
 		{
-			name: "OK",
-			want: 12345,
+			name:    "OK",
+			want:    12345,
 			wantErr: false,
 		},
 	}
@@ -113,61 +111,6 @@ func TestAvailablePort(t *testing.T) {
 			}
 			if got != tt.want {
 				t.Errorf("AvailablePort() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func TestValidateNatsTopic(t *testing.T) {
-	type args struct {
-		tName string
-	}
-	tests := []struct {
-		name    string
-		args    args
-		want    bool
-		wantErr bool
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got, err := ValidateNatsTopic(tt.args.tName)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("ValidateNatsTopic() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
-			if got != tt.want {
-				t.Errorf("ValidateNatsTopic() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func TestNewConnection(t *testing.T) {
-	type args struct {
-		host    string
-		cluster string
-		client  string
-		port    int
-	}
-	tests := []struct {
-		name    string
-		args    args
-		want    stan.Conn
-		wantErr bool
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got, err := NewConnection(tt.args.host, tt.args.cluster, tt.args.client, tt.args.port)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("NewConnection() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("NewConnection() = %v, want %v", got, tt.want)
 			}
 		})
 	}
