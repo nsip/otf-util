@@ -10,6 +10,10 @@ import (
 	"github.com/pkg/errors"
 )
 
+func init() {
+	log.SetFlags(log.LstdFlags | log.Lshortfile)
+}
+
 //
 // checks provided nats topic only has alphanumeric & dot separators within the name
 //

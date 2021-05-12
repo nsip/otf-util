@@ -11,9 +11,7 @@ import (
 
 func TestPub(t *testing.T) {
 
-	log.SetFlags(log.LstdFlags | log.Lshortfile)
-
-	sc, err := NewNSConnection("", "", "pubClient", 0)
+	sc, err := NewNSConnection("", "test-cluster", "TestPub", 0)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -25,9 +23,7 @@ func TestPub(t *testing.T) {
 
 func TestSub(t *testing.T) {
 
-	log.SetFlags(log.LstdFlags | log.Lshortfile)
-
-	sc, err := NewNSConnection("", "", "subClient", 0)
+	sc, err := NewNSConnection("", "test-cluster", "TestSub", 0)
 	if err != nil {
 		log.Fatalln(err)
 	}

@@ -4,10 +4,11 @@ go 1.16
 
 require (
 	github.com/nats-io/jwt v1.2.2 // indirect
+	github.com/nats-io/nats.go v1.11.0 // indirect
 	github.com/nats-io/nkeys v0.3.0 // indirect
 	github.com/nats-io/nuid v1.0.1
 	github.com/nats-io/stan.go v0.8.3
 	github.com/pkg/errors v0.9.1
 	github.com/speps/go-hashids v2.0.0+incompatible
-	golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b // indirect
+	golang.org/x/crypto v0.0.0-20210506145944-38f3c27a63bf // indirect
 )
